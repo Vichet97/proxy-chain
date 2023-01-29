@@ -35,7 +35,7 @@ export const forwardSocks = async (
     // eslint-disable-next-line no-async-promise-executor
 ): Promise<void> => new Promise(async (resolve, reject) => {
     const { hostname, port, username, password } = handlerOpts.upstreamProxyUrlParsed;
-    const proxy: SocksProxyAgentOptions= {
+    const proxy: SocksProxyAgentOptions = {
         hostname,
         port: Number(port),
         type: 4,
