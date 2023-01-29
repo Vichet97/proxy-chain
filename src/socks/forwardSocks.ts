@@ -2,7 +2,6 @@ import http from 'http';
 import stream from 'stream';
 import util from 'util';
 import { URL } from 'url';
-import type { SocksProxy } from 'socks';
 import { SocksProxyAgent } from 'socks-proxy-agent';
 import { validHeadersOnly } from '../utils/valid_headers_only';
 import { countTargetBytes } from '../utils/count_target_bytes';
@@ -36,7 +35,7 @@ export const forwardSocks = async (
     // eslint-disable-next-line no-async-promise-executor
 ): Promise<void> => new Promise(async (resolve, reject) => {
     const { hostname, port, username, password } = handlerOpts.upstreamProxyUrlParsed;
-    const proxy: SocksProxy = {
+    const proxy = {
         hostname,
         port: Number(port),
         type: 4,
