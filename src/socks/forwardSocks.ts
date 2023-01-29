@@ -37,7 +37,7 @@ export const forwardSocks = async (
 ): Promise<void> => new Promise(async (resolve, reject) => {
     const { hostname, port, username, password } = handlerOpts.upstreamProxyUrlParsed;
     const proxy: SocksProxy = {
-        host: hostname,
+        hostname,
         port: Number(port),
         type: 4,
     };
